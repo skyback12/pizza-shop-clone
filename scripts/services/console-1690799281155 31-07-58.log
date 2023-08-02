@@ -1,0 +1,128 @@
+function doNetworkcall(){
+    const URL = "https://gist.githubusercontent.com/kshirsagarps/36fade16fa39202715656ef487aaf7b0/raw/2b682e589ef283f06be42d2799dfa54f57794a6e/Pizza.json";
+    const promise = fetch(URL);
+    console.log('Posmise is',promise);
+}
+undefined
+doNetworkcall();
+VM21:4 Posmise is Promise {<pending>}
+undefined
+function callback(response){
+    console.log('i get a response',response);
+}
+function doNetworkcall(fn){
+    console.log('Fn Start..');
+    const URL = "https://gist.githubusercontent.com/kshirsagarps/36fade16fa39202715656ef487aaf7b0/raw/2b682e589ef283f06be42d2799dfa54f57794a6e/Pizza.json";
+    const promise = fetch(URL);
+    console.log('Posmise is',promise);
+    promise.then(function(response){
+        console.log('Res',response);
+        //return response;
+        fn(response)
+
+    }).catch(function(err){
+        console.log('Error is',err);
+    })
+    console.log('Fn Ends..');
+}
+doNetworkcall(callback)
+VM64:5 Fn Start..
+VM64:8 Posmise is Promise {<pending>}
+VM64:17 Fn Ends..
+undefined
+VM64:10 Res Response {type: 'cors', url: 'https://gist.githubusercontent.com/kshirsagarps/36…682e589ef283f06be42d2799dfa54f57794a6e/Pizza.json', redirected: false, status: 200, ok: true, …}
+VM64:2 i get a response Response {type: 'cors', url: 'https://gist.githubusercontent.com/kshirsagarps/36…682e589ef283f06be42d2799dfa54f57794a6e/Pizza.json', redirected: false, status: 200, ok: true, …}
+function callback(response){
+    console.log('i get a response',response);
+}
+function doNetworkcall(fn){
+    console.log('Fn Start..');
+    const URL = "https://gist.githubusercontent.com/kshirsagarps/36fade16fa39202715656ef487aaf7b0/raw/2b682e589ef283f06be42d2799dfa54f57794a6e/Pizza.json";
+    const promise = fetch(URL);
+    console.log('Posmise is',promise);
+    promise.then(function(response){
+        console.log('Res',response);
+        //return response;
+        fn(response)
+
+    }).catch(function(err){
+        console.log('Error is',err);
+    })
+    console.log('Fn Ends..');
+}
+undefined
+doNetworkcall();
+VM68:5 Fn Start..
+VM68:8 Posmise is Promise {<pending>}
+VM68:17 Fn Ends..
+undefined
+VM68:10 Res Response {type: 'cors', url: 'https://gist.githubusercontent.com/kshirsagarps/36…682e589ef283f06be42d2799dfa54f57794a6e/Pizza.json', redirected: false, status: 200, ok: true, …}
+VM68:15 Error is TypeError: fn is not a function
+    at <anonymous>:12:9
+
+function doNetworkcall(){
+    console.log('Fn Start..');
+    const URL = "https://gist.githubusercontent.com/kshirsagarps/36fade16fa39202715656ef487aaf7b0/raw/2b682e589ef283f06be42d2799dfa54f57794a6e/Pizza.json";
+    const promise = fetch(URL);
+    console.log('Posmise is',promise);
+    promise.then(function(response){
+        console.log('Res',response);
+        return response;
+
+    }).catch(function(err){
+        console.log('Error is',err);
+    })
+    console.log('Fn Ends..');
+}
+undefined
+doNetworkcall();
+VM131:3 Fn Start..
+VM131:6 Posmise is Promise {<pending>}
+VM131:14 Fn Ends..
+undefined
+VM131:8 Res Response {type: 'cors', url: 'https://gist.githubusercontent.com/kshirsagarps/36…682e589ef283f06be42d2799dfa54f57794a6e/Pizza.json', redirected: false, status: 200, ok: true, …}
+doNetworkcall();
+VM131:3 Fn Start..
+VM131:6 Posmise is Promise {<pending>}
+VM131:14 Fn Ends..
+undefined
+VM131:8 Res Response {type: 'cors', url: 'https://gist.githubusercontent.com/kshirsagarps/36…682e589ef283f06be42d2799dfa54f57794a6e/Pizza.json', redirected: false, status: 200, ok: true, …}
+async function doNetworkcall(){
+    console.log('Fn Start..');
+    const URL = "https://gist.githubusercontent.com/kshirsagarps/36fade16fa39202715656ef487aaf7b0/raw/2b682e589ef283f06be42d2799dfa54f57794a6e/Pizza.json";
+    try{
+        const response = await fetch(URL);//header + body
+        const obj = await response.json();//json convert into object
+
+    }
+    catch(err){
+        throw err;
+    }
+}
+undefined
+doNetworkcall();
+VM144:2 Fn Start..
+Promise {<pending>}
+async function doNetworkcall(){
+    console.log('Fn Start..');
+    const URL = "https://gist.githubusercontent.com/kshirsagarps/36fade16fa39202715656ef487aaf7b0/raw/2b682e589ef283f06be42d2799dfa54f57794a6e/Pizza.json";
+    try{
+        const response = await fetch(URL);//header + body
+        const obj = await response.json();//json convert into object
+
+    }
+    catch(err){
+        throw err;
+    }
+}
+undefined
+const p = doNetworkcall();
+VM153:2 Fn Start..
+undefined
+p;
+Promise {<fulfilled>: undefined}[[Prototype]]: Promisecatch: ƒ catch()constructor: ƒ Promise()finally: ƒ finally()then: ƒ then()Symbol(Symbol.toStringTag): "Promise"[[Prototype]]: Objectconstructor: ƒ Object()assign: ƒ assign()create: ƒ create()defineProperties: ƒ defineProperties()defineProperty: ƒ defineProperty()entries: ƒ entries()freeze: ƒ freeze()fromEntries: ƒ fromEntries()getOwnPropertyDescriptor: ƒ getOwnPropertyDescriptor()getOwnPropertyDescriptors: ƒ getOwnPropertyDescriptors()getOwnPropertyNames: ƒ getOwnPropertyNames()getOwnPropertySymbols: ƒ getOwnPropertySymbols()getPrototypeOf: ƒ getPrototypeOf()hasOwn: ƒ hasOwn()is: ƒ is()isExtensible: ƒ isExtensible()isFrozen: ƒ isFrozen()isSealed: ƒ isSealed()keys: ƒ keys()length: 1name: "Object"preventExtensions: ƒ preventExtensions()prototype: {constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}seal: ƒ seal()setPrototypeOf: ƒ setPrototypeOf()values: ƒ values()arguments: (...)caller: (...)[[Prototype]]: ƒ ()[[Scopes]]: Scopes[0]hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()[[PromiseState]]: "fulfilled"[[PromiseResult]]: undefined
+p.then(function(d){
+    console.log(d);
+});
+VM304:2 undefined
+Promise {<fulfilled>: undefined}
